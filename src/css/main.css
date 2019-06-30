@@ -1,2 +1,12 @@
 body {
-  background: pink; }
+  background: #fafafa; }
+
+.box {
+  max-height: 987px;
+  max-width: 875px; }
+  .box .img-container {
+    background-image: url(../img/fpo.png);
+    min-height: 23vh;
+    background-size: cover; }
+  .box img {
+    max-width: 100%; }
