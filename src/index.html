@@ -4,35 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/vendor/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
     <title>challenge</title>
 </head>
 <body>
-    <div class="container m-5">
+    <div class="container mt-5">
+        
         <div class="row box">
-            <div class="slider col-md-3">
-                <div class="img-container">
-                    
+            <div class="slider col-md-5">
+            <div class="glide">
+                    <div class="glide__track" data-glide-el="track">
+                        <ul class="glide__slides">
+                        <li class="glide__slide"><img src="img/fpo.png" alt=""></li>
+                        <li class="glide__slide"><img src="img/fpo.png" alt=""></li>
+                        <li class="glide__slide"><img src="img/fpo.png" alt=""></li>
+                        </ul>
+                    </div>
+                    <div class="glide__arrows" data-glide-el="controls">
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+                            </div>
                 </div>
             </div>
-            <div class="info col-md-9">
+            <div class="info col-md-7">
                 <div class="title">
-                    Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro 
+                    <a href="#"><p>Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro</p> </a> 
                 </div>
                 <div class="location">
-                    Juan Francisco Seguí 3900, Palermo Chico, Palermo
-                </div>
+                        <p>
+                            <i class="fa fa-map-marker" aria-hidden="true"></i> 
+                            <span class="address">Juan Francisco Seguí 3900,</span>  
+                            <span class="city">Palermo Chico, Palermo, Capital Federal, Argentina</span> 
 
-                <div class="text-info">
-                    Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de
-                    texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el
-                    año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) 
+                        </p>
+                </div> 
+
+                <div class="description">
+                    <p>
+                        Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de
+                        texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el
+                        año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) 
+                    </p>
+                    
                 </div>
 
                 <div class="prices">
                     <div class="price">U$S 1.400.000</div>
-                    <div class="square-meters">$/m23.680</div>
+                    <div class="square-meters"><span>$/m<sup>2</sup></span>23.680</div> 
                 </div>
 
                 <div class="summary">
@@ -45,8 +66,15 @@
                 <div class="contact">
                     <button>Contactar</button>
                 </div>
+                
             </div>
         </div>
     </div>
+
+    <script src="../node_modules/@glidejs/glide/dist/glide.min.js"></script>
+
+    <script>
+        new Glide('.glide').mount()
+    </script>
 </body>
 </html>

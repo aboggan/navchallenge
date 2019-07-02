@@ -1,16 +1,119 @@
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.core";
+
+// Optional Theme Stylesheet
+@import "node_modules/@glidejs/glide/src/assets/sass/glide.theme";
+
+
+
 body{
     background: #fafafa;
 }
 
+@mixin elipsis {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
 .box{
+    font-family: 'Roboto', sans-serif;
+    ul{
+        margin-bottom: 0;
+    }
     max-height: 987px;
+    min-width: 734px;
     max-width: 875px;
     -webkit-box-shadow: 17px 20px 20px -20px rgba(209,209,209,1);
     -moz-box-shadow: 17px 20px 20px -20px rgba(209,209,209,1);
     box-shadow: 17px 20px 20px -20px rgba(209,209,209,1);
     border: 0.8px solid #e1e1e1;
+
+    .info{
+        padding: 20px 20px 0px 20px;
+        position: relative;
+        p{
+            margin: 0;
+        }
+        .title{
+            a{
+                text-decoration: none;
+            }
+            p{
+                color: #1ea7dd;
+                font-size: 18px;
+                @include elipsis;
+            }
+        }
+        .location{
+            padding: 5px 0 10px 0;
+            color: #999;
+            .address{
+                font-weight: bold;
+            }
+            p{
+                @include elipsis;
+                font-size:16px;
+                padding-right: 100px;
+            }
+            i{
+                margin-right: 5px;
+            }
+        }
+        .description{
+            color:#000;
+            font-size: 15px;
+            margin: 0px 0px 15px 0px;
+
+        }
+        .prices{
+            padding-bottom:10px;
+            position: relative;
+            bottom: 11px;
+            .price{
+                font-weight:900;
+                font-size: 30px;
+            }
+            .square-meters{
+                margin-left: 5px;
+                color: #009ee5;
+                font-size: 18px;
+                span{
+                    font-style: italic;
+                    margin-right: 5px;
+                    font-size: 15px;
+                }
+            }
+        }
+        .summary{
+            position: absolute;
+            background:#eaeaea;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 45px;
+            padding: 14px 0 14px 22px ;
+            font-size: 14px;
+            font-weight: bold;
+            div{
+                margin-right: 10px;
+            }
+        }
+        
+        .summary *, .prices *{
+            display: inline-block;
+        }
+
+        .contact{
+            display: none;
+        }
+
+    }
+
+    @media(max-width: 480px){
+        min-width: 320px;
+        max-width: 414px;
+    }
     .slider{
-        padding: 0.8px 0px 0.8px 0.8px;
+        padding: 1px 0px 1px 0.8px;
     }
     .img-container{
         background-image: url(../img/fpo.png);
@@ -18,11 +121,9 @@ body{
         background-size: cover;
     }
     img{
-        max-width: 100%;
+        max-width: 100%; 
     }
-    .summary *, .prices *{
-        display: inline-block;
-    }
+    
     
     
 }
