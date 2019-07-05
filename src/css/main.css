@@ -1,12 +1,245 @@
+.glide {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box; }
+  .glide * {
+    box-sizing: inherit; }
+  .glide__track {
+    overflow: hidden; }
+  .glide__slides {
+    position: relative;
+    width: 100%;
+    list-style: none;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    touch-action: pan-Y;
+    overflow: hidden;
+    padding: 0;
+    white-space: nowrap;
+    display: flex;
+    flex-wrap: nowrap;
+    will-change: transform; }
+    .glide__slides--dragging {
+      user-select: none; }
+  .glide__slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    white-space: normal;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent; }
+    .glide__slide a {
+      user-select: none;
+      -webkit-user-drag: none;
+      -moz-user-select: none;
+      -ms-user-select: none; }
+  .glide__arrows {
+    -webkit-touch-callout: none;
+    user-select: none; }
+  .glide__bullets {
+    -webkit-touch-callout: none;
+    user-select: none; }
+  .glide--rtl {
+    direction: rtl; }
+
+.glide__arrow {
+  position: absolute;
+  display: block;
+  top: 50%;
+  z-index: 2;
+  color: white;
+  text-transform: uppercase;
+  padding: 9px 12px;
+  background-color: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+  text-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.1);
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 150ms ease, border 300ms ease-in-out;
+  transform: translateY(-50%);
+  line-height: 1; }
+  .glide__arrow:focus {
+    outline: none; }
+  .glide__arrow:hover {
+    border-color: white; }
+  .glide__arrow--left {
+    left: 2em; }
+  .glide__arrow--right {
+    right: 2em; }
+  .glide__arrow--disabled {
+    opacity: 0.33; }
+
+.glide__bullets {
+  position: absolute;
+  z-index: 2;
+  bottom: 2em;
+  left: 50%;
+  display: inline-flex;
+  list-style: none;
+  transform: translateX(-50%); }
+
+.glide__bullet {
+  background-color: rgba(255, 255, 255, 0.5);
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  transition: all 300ms ease-in-out;
+  cursor: pointer;
+  line-height: 0;
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+  margin: 0 0.25em; }
+  .glide__bullet:focus {
+    outline: none; }
+  .glide__bullet:hover, .glide__bullet:focus {
+    border: 2px solid white;
+    background-color: rgba(255, 255, 255, 0.5); }
+  .glide__bullet--active {
+    background-color: white; }
+
+.glide--swipeable {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab; }
+
+.glide--dragging {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing; }
+
 body {
   background: #fafafa; }
 
 .box {
+  font-family: 'Roboto', sans-serif;
   max-height: 987px;
-  max-width: 875px; }
-  .box .img-container {
-    background-image: url(../img/fpo.png);
-    min-height: 23vh;
-    background-size: cover; }
+  min-width: 734px;
+  max-width: 875px;
+  -webkit-box-shadow: 17px 20px 20px -20px #d1d1d1;
+  -moz-box-shadow: 17px 20px 20px -20px #d1d1d1;
+  box-shadow: 17px 20px 20px -20px #d1d1d1;
+  border: 0.8px solid #e1e1e1; }
+  .box ul {
+    margin-bottom: 0; }
+  .box .info {
+    padding: 20px 20px 0px 20px;
+    position: relative; }
+    .box .info p {
+      margin: 0; }
+    .box .info .title a {
+      text-decoration: none; }
+    .box .info .title p {
+      color: #1ea7dd;
+      font-size: 18px;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; }
+    .box .info .location {
+      padding: 5px 0 10px 0;
+      color: #999; }
+      .box .info .location .address {
+        font-weight: bold; }
+      .box .info .location p {
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        font-size: 16px;
+        padding-right: 100px; }
+      .box .info .location i {
+        margin-right: 5px; }
+    .box .info .description {
+      color: #000;
+      font-size: 15px;
+      margin: 0px 0px 15px 0px; }
+    .box .info .prices {
+      padding-bottom: 10px;
+      position: relative;
+      bottom: 11px; }
+      .box .info .prices .price {
+        font-weight: 900;
+        font-size: 30px; }
+      .box .info .prices .inputValue {
+        margin-right: 10px; }
+      .box .info .prices .btn {
+        font-size: 14px; }
+      .box .info .prices .square-meters {
+        margin-left: 5px;
+        color: #009ee5;
+        font-size: 18px; }
+        .box .info .prices .square-meters span {
+          font-style: italic;
+          margin-right: 5px;
+          font-size: 15px; }
+    .box .info .summary {
+      position: relative;
+      min-height: 30px; }
+      .box .info .summary .details {
+        display: none;
+        position: absolute;
+        background: #eaeaea;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 45px;
+        padding: 14px 0 14px 22px;
+        font-size: 14px;
+        font-weight: bold; }
+      .box .info .summary div {
+        margin-right: 10px; }
+    .box .info .summary *, .box .info .prices * {
+      display: inline-block; }
+    .box .info .contact {
+      position: absolute;
+      right: 20px;
+      bottom: 9px; }
+      .box .info .contact a {
+        font-weight: bold;
+        text-decoration: none;
+        color: #1ea7dd; }
+  .box .glide .highlight {
+    position: absolute;
+    background: #9159e6;
+    z-index: 10;
+    color: #fff;
+    top: 18px;
+    padding: 5px 10px 5px 10px;
+    font-size: 14px;
+    font-weight: bold; }
+  .box .glide .heart {
+    position: absolute;
+    z-index: 10;
+    right: 10px;
+    font-size: 30px; }
+  .box .glide .glide__arrow {
+    border: none;
+    font-size: 32px;
+    top: 53%;
+    box-shadow: none; }
+  .box .glide .glide__arrow--right {
+    right: 0; }
+  .box .glide .glide__arrow--left {
+    left: 0;
+    top: 54%; }
+  @media (max-width: 480px) {
+    .box {
+      min-width: 320px;
+      max-width: 414px; } }
+  .box .slider {
+    padding: 1px 0px 1px 0.8px; }
+    .box .slider .heart {
+      position: absolute;
+      top: 20px;
+      right: 10px;
+      cursor: pointer; }
+      .box .slider .heart .heart-icon {
+        background-image: url("../img/heart-off.svg");
+        width: 30px;
+        height: 27px; }
+        .box .slider .heart .heart-icon.active {
+          background-image: url("../img/heart-on.svg"); }
   .box img {
     max-width: 100%; }

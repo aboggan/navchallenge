@@ -16,16 +16,19 @@
         <div class="row box">
             <div class="slider col-md-5">
             <div class="glide">
-                    <div class="glide__track" data-glide-el="track">
+                    <div class="highlight">Super Destacado</div>
+                    <div class="heart"><div class="heart-icon"></div></div>
+                    <div class="glide__track" data-glide-el="track"> 
                         <ul class="glide__slides">
-                        <li class="glide__slide"><img src="img/fpo.png" alt=""></li>
-                        <li class="glide__slide"><img src="img/fpo.png" alt=""></li>
-                        <li class="glide__slide"><img src="img/fpo.png" alt=""></li>
+                        <li class="glide__slide"><img src="img/depto1.webp" alt=""></li>
+                        <li class="glide__slide"><img src="img/depto1.webp" alt=""></li>
+                        <li class="glide__slide"><img src="img/depto1.webp" alt=""></li>
+                        <li class="glide__slide"><img src="img/depto1.webp" alt=""></li>
                         </ul>
                     </div>
                     <div class="glide__arrows" data-glide-el="controls">
-                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><</button>
-                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">">></button>
+                            <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><i class="fa fa-chevron-left" aria-hidden="true"></i></button>
+                            <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><i class="fa fa-chevron-right" aria-hidden="true"></i></button>
                             </div>
                 </div>
             </div>
@@ -52,29 +55,30 @@
                 </div>
 
                 <div class="prices">
-                    <div class="price">U$S 1.400.000</div>
-                    <div class="square-meters"><span>$/m<sup>2</sup></span>23.680</div> 
+                    <div class="price">U$S <span>2300000</span></div>
+                    <div class="square-meters"><span>$/m<sup>2</sup></span><div class="value">23.680</div></div> 
                 </div>
-
+                
                 <div class="summary">
-                    <div class="measure">380 m2</div>
-                    <div class="beds">3 Dormitorios</div>
-                    <div class="bath">2 Baños</div>
-                    <div class="garage">2 Cocheras</div>
-
+                    <div class="details">
+                        <div class="measure"><span>380</span> m2</div>
+                        <div class="beds">3 Dormitorios</div>
+                        <div class="bath">2 Baños</div>
+                        <div class="garage">2 Cocheras</div>
+                    </div>
                 </div>        
                 <div class="contact">
-                    <button>Contactar</button>
+                    <a href="#">CONTACTAR</a>
                 </div>
                 
             </div>
         </div>
     </div>
-
+    
     <script src="../node_modules/@glidejs/glide/dist/glide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js`"></script>
 
-    <script>
-        new Glide('.glide').mount()
-    </script>
+
+    <script src="js/app.js"></script>
 </body>
 </html>
