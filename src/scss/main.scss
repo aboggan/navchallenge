@@ -14,6 +14,11 @@ body{
     white-space: nowrap;
     overflow: hidden;
 }
+.container.mt-5{
+    @media(max-width: 480px){
+        margin-top: 0 !important;
+    }
+}
 .box{
     font-family: 'Roboto', sans-serif;
     ul{
@@ -65,6 +70,9 @@ body{
 
         }
         .prices{
+            @media(max-width: 480px){
+                display: none;
+            }
             padding-bottom:10px;
             position: relative;
             bottom: 11px;
@@ -90,10 +98,11 @@ body{
             }
         }
         .summary{
-            position: relative;
-            min-height: 30px;
-            .details{
+            @media(max-width: 480px){
                 display: none;
+            }
+            min-height: 22px;
+            .details{
                 position: absolute;
                 background:#eaeaea;
                 left: 0;
@@ -117,6 +126,11 @@ body{
             position: absolute;
             right: 20px;
             bottom: 9px;
+            @media(max-width:480px){
+                position: static;
+                float: right;
+                margin-bottom: 14px;
+            }
             a{
                 font-weight: bold;
                 text-decoration: none;
@@ -165,7 +179,7 @@ body{
         max-width: 414px;
     }
     .slider{
-        padding: 1px 0px 1px 0.8px;
+        background: #eaeaea;
         .heart{
             position: absolute;
             top: 20px;
@@ -180,10 +194,38 @@ body{
                 }
             }
         }
-    }
-    
-    img{
-        max-width: 100%; 
+        .summary, .prices-mobile{
+            display: none;
+        }
+
+
+        @media(max-width: 480px){
+            .summary, .prices-mobile{
+                display: block;
+            }
+            .summary *, .prices-mobile *{
+                display: inline-block;
+            }
+            .prices-mobile{
+                position: absolute;
+                bottom: 31px;
+                z-index: 10;
+                color: #fff;
+                font-size: 31px;
+                font-weight: bold;
+                left: 15px;
+            }
+            .summary{
+                .details{
+                    position: absolute;
+                    color: #fff;
+                    bottom: 9px;
+                    left: 14px;
+                    font-size: 14px;
+                    font-weight: bold;
+                }
+            }
+        }
     }
     
     
