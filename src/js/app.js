@@ -96,11 +96,14 @@ var observerConfig = {
 }   
 var observer = new MutationObserver(function(mutations) {
     mutations.forEach(function(mutation) {
+    let error=  document.querySelector(".form-control"); 
+    let result = document.querySelector('#result')
       if(mutation.attributeName === 'style'){
             console.log("style change");
         if(!modal.classList.contains('show'))
-            alert("cerrado")
-            sarasa.classList.remove("error")
+            result.innerHTML = "";
+            error.value="";
+            error.classList.remove("error");
         }
     })
 })
