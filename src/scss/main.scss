@@ -200,6 +200,12 @@ body{
         max-width: 414px;
     }
     .slider{
+        img{
+            min-width: 370px;
+            @media(max-width: 480px){
+                min-width: 414px;
+            }
+        }
         background: #eaeaea;
         .heart{
             position: absolute;
