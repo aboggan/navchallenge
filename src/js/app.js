@@ -40,7 +40,7 @@ function editPrice() {
     txt_num1.setAttribute('value', price.innerHTML)
     txt_num1.setAttribute('type', 'number')
 
-    btn_confirmar.innerHTML = "Cambiar valor"
+    btn_confirmar.innerHTML = "Modificar"
     price.innerHTML = ""
     priceContainer.appendChild(txt_num1)
     priceContainer.appendChild(btn_confirmar)
@@ -65,3 +65,27 @@ function changeHeart() {
         localStorage.setItem('heart', '');
     }
 }
+
+//Vaidation
+function validateEmail(email) {
+    let re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+  
+  function validate() {
+    let error=  document.querySelector(".form-control");  
+    let $result = $("#result");
+    let email = $("#email").val();
+    $result.text("");
+    if (validateEmail(email)) {
+      $result.text(console.log("email valido"));
+      error.classList.remove("error");
+
+    } else {
+    error.classList.add("error");
+    $result.text("Por favor ingresa un email valido");
+    }
+    return false;
+  }
+  
+  $("#validate").on("click", validate);

@@ -31,15 +31,12 @@ body{
     -moz-box-shadow: 17px 20px 20px -20px rgba(209,209,209,1);
     border: 0.8px solid #e1e1e1;
 }
-body{
+body{font-family: 'Roboto', sans-serif;
 }
 .container.mt-5{
     @media(max-width: 480px){
         margin-top: 0 !important;
     }
-}
-.box{
-    font-family: 'Roboto', sans-serif;
 }
 .box{
     ul{
@@ -103,6 +100,7 @@ body{
         }
             .btn{
                 font-size:14px;
+                padding: 5px;
             }
             .square-meters{
                 margin-left: 5px;
@@ -126,8 +124,8 @@ body{
                 left: 0;
                 bottom: 0;
                 width: 100%;
-                height: 45px;
-                padding: 14px 0 14px 22px ;
+                height: 38px;
+                padding: 10px 0 14px 22px ;
                 font-size: 14px;
                 font-weight: bold;
             }
@@ -146,7 +144,7 @@ body{
         .contact{
             position: absolute;
             right: 20px;
-            bottom: 9px;
+            bottom: -3px;
             @media(max-width:480px){
                 position: static;
                 float: right;
@@ -250,7 +248,7 @@ body{
     }
 }
 .modal-content{
-    border: 0.8px solid #e1e1e1;
+    border: 0.5px solid #e1e1e1;
     border-radius:unset;
     .close{
         margin:10px 10px 0px 0px;
@@ -264,12 +262,37 @@ body{
             font-size: 14px;
         }
     }
-    .modal-footer{
-        border-top:none; 
-        font-size: 14px;
-        .sendButton {
-            @include buttonStyle;
+    .modal-body{
+        padding:0 1rem;
+        p{
+            margin-bottom:2px;  
+            font-size: 14px;
+            font-weight: bold;
+            color:#999;
         }
+        .form-control{
+            border:none;
+            border-bottom: 1px solid #999;
+            font-size: 14px;
+            border-radius:0;
+            &.error{
+                border-bottom: 2px solid #e60000;
+            }
+        }   
+        #result{
+            color:red;
+        }
+    }
+    .sendButton{
+        border:none; 
+        font-size: 14px;
+        margin-bottom: 10px;
+        background: unset;
+        float: right;
+        color: $main-blue;
+        text-transform: uppercase;
+        font-weight: bold;  
+    
     }
     
 }
