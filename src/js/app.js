@@ -89,3 +89,19 @@ function validateEmail(email) {
   }
   
   $("#validate").on("click", validate);
+let modal = document.querySelector('#exampleModalCenter')
+var observerConfig = {
+	attributes: true, 
+    attributeFilter: ["style"]
+}   
+var observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+      if(mutation.attributeName === 'style'){
+            console.log("style change");
+        if(!modal.classList.contains('show'))
+            alert("cerrado")
+            sarasa.classList.remove("error")
+        }
+    })
+})
+observer.observe(modal, observerConfig);
