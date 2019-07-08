@@ -5,5 +5,5 @@ Bajar el codigo.
 `npm install`
 `npm run scss` 
 
-> Ultilizar index.html
-> Live Server
+######  Ultilizar index.html 
+######  Live Server
