@@ -14,18 +14,34 @@ body{
     white-space: nowrap;
     overflow: hidden;
 }
-.box{
+@mixin buttonStyle {
+    position: absolute;
+    right: 20px;
+    bottom: 9px;
+    text-decoration: none;
+    color: $main-blue;
+    text-decoration: none;
+    color: $main-blue;
+    text-transform: uppercase;
+    font-weight: bold;  
+
+}
+@mixin boxStyle {
+    -webkit-box-shadow: 17px 20px 20px -20px rgba(209,209,209,1);
+    -moz-box-shadow: 17px 20px 20px -20px rgba(209,209,209,1);
+    border: 0.8px solid #e1e1e1;
+}
+body{
     font-family: 'Roboto', sans-serif;
+}
+.box{
     ul{
         margin-bottom: 0;
     }
     max-height: 987px;
     min-width: 734px;
     max-width: 875px;
-    -webkit-box-shadow: 17px 20px 20px -20px rgba(209,209,209,1);
-    -moz-box-shadow: 17px 20px 20px -20px rgba(209,209,209,1);
-    box-shadow: 17px 20px 20px -20px rgba(209,209,209,1);
-    border: 0.8px solid #e1e1e1;
+    @include boxStyle;
 
     .info{
         padding: 20px 20px 0px 20px;
@@ -113,16 +129,8 @@ body{
             display: inline-block;
         }
 
-        .contact{
-            position: absolute;
-            right: 20px;
-            bottom: 9px;
-            a{
-                font-weight: bold;
-                text-decoration: none;
-                color: $main-blue;
-            }
-
+        .contact a{
+            @include buttonStyle;
         }
 
     }
@@ -185,7 +193,28 @@ body{
     img{
         max-width: 100%; 
     }
-    
-    
+}
+.modal-content{
+    border: 0.8px solid #e1e1e1;
+    border-radius:unset;
+    .close{
+        margin:10px 10px 0px 0px;
+    }
+
+    .modal-header{
+        border-bottom:none;
+        p{
+            color: #1ea7dd; 
+            font-weight: bold; 
+            font-size: 14px;
+        }
+    }
+    .modal-footer{
+        border-top:none; 
+        font-size: 14px;
+        .sendButton {
+            @include buttonStyle;
+        }
+    }
     
 }
