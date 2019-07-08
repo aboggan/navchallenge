@@ -114,6 +114,10 @@
 body {
   background: #fafafa; }
 
+@media (max-width: 480px) {
+  .container.mt-5 {
+    margin-top: 0 !important; } }
+
 .box {
   font-family: 'Roboto', sans-serif;
   max-height: 987px;
@@ -159,6 +163,9 @@ body {
       padding-bottom: 10px;
       position: relative;
       bottom: 11px; }
+      @media (max-width: 480px) {
+        .box .info .prices {
+          display: none; } }
       .box .info .prices .price {
         font-weight: 900;
         font-size: 30px; }
@@ -175,10 +182,11 @@ body {
           margin-right: 5px;
           font-size: 15px; }
     .box .info .summary {
-      position: relative;
-      min-height: 30px; }
+      min-height: 22px; }
+      @media (max-width: 480px) {
+        .box .info .summary {
+          display: none; } }
       .box .info .summary .details {
-        display: none;
         position: absolute;
         background: #eaeaea;
         left: 0;
@@ -196,6 +204,11 @@ body {
       position: absolute;
       right: 20px;
       bottom: 9px; }
+      @media (max-width: 480px) {
+        .box .info .contact {
+          position: static;
+          float: right;
+          margin-bottom: 14px; } }
       .box .info .contact a {
         font-weight: bold;
         text-decoration: none;
@@ -229,7 +242,7 @@ body {
       min-width: 320px;
       max-width: 414px; } }
   .box .slider {
-    padding: 1px 0px 1px 0.8px; }
+    background: #eaeaea; }
     .box .slider .heart {
       position: absolute;
       top: 20px;
@@ -241,5 +254,25 @@ body {
         height: 27px; }
         .box .slider .heart .heart-icon.active {
           background-image: url("../img/heart-on.svg"); }
-  .box img {
-    max-width: 100%; }
+    .box .slider .summary, .box .slider .prices-mobile {
+      display: none; }
+    @media (max-width: 480px) {
+      .box .slider .summary, .box .slider .prices-mobile {
+        display: block; }
+      .box .slider .summary *, .box .slider .prices-mobile * {
+        display: inline-block; }
+      .box .slider .prices-mobile {
+        position: absolute;
+        bottom: 31px;
+        z-index: 10;
+        color: #fff;
+        font-size: 31px;
+        font-weight: bold;
+        left: 15px; }
+      .box .slider .summary .details {
+        position: absolute;
+        color: #fff;
+        bottom: 9px;
+        left: 14px;
+        font-size: 14px;
+        font-weight: bold; } }

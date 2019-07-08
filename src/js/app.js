@@ -8,7 +8,7 @@ if (localStorage.getItem('heart')) {
 }
 
 let priceContainer = document.querySelector('.prices')
-let price = document.querySelector('.price span')
+let price = document.querySelector('.prices .price span')
 let meters = document.querySelector('.measure span')
 let total = document.querySelector('.square-meters .value')
 
@@ -17,7 +17,17 @@ price.addEventListener("click", editPrice)
 calcularTotal(price.innerHTML, meters)
 
 function calcularTotal(price, meters) {
-    total.innerHTML = parseInt(Number(price) / Number(meters.innerHTML))
+    if(localStorage.getItem('priceValue')){
+        total.innerHTML = parseInt(Number(localStorage.getItem('priceValue')) / Number(meters.innerHTML))
+        let newPrice = document.querySelector('.prices .price span')
+        let newPriceMobile = document.querySelector('.prices-mobile .price span')
+        newPrice.innerHTML = localStorage.getItem('priceValue')
+        newPriceMobile.innerHTML = localStorage.getItem('priceValue')
+
+    }else{
+
+        total.innerHTML = parseInt(Number(price) / Number(meters.innerHTML))
+    }
 }
 
 function editPrice() {
@@ -37,6 +47,7 @@ function editPrice() {
 
     btn_confirmar.onclick = function () {
         /**TODO validar campo antes**/
+        localStorage.setItem('priceValue',txt_num1.value )
         calcularTotal(txt_num1.value, meters)
         priceContainer.removeChild(txt_num1)
         priceContainer.removeChild(btn_confirmar)
