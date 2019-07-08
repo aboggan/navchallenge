@@ -114,18 +114,19 @@
 body {
   background: #fafafa; }
 
+body {
+  font-family: 'Roboto', sans-serif; }
+
 @media (max-width: 480px) {
   .container.mt-5 {
     margin-top: 0 !important; } }
 
 .box {
-  font-family: 'Roboto', sans-serif;
   max-height: 987px;
   min-width: 734px;
   max-width: 875px;
   -webkit-box-shadow: 17px 20px 20px -20px #d1d1d1;
   -moz-box-shadow: 17px 20px 20px -20px #d1d1d1;
-  box-shadow: 17px 20px 20px -20px #d1d1d1;
   border: 0.8px solid #e1e1e1; }
   .box ul {
     margin-bottom: 0; }
@@ -172,7 +173,8 @@ body {
       .box .info .prices .inputValue {
         margin-right: 10px; }
       .box .info .prices .btn {
-        font-size: 14px; }
+        font-size: 14px;
+        padding: 5px; }
       .box .info .prices .square-meters {
         margin-left: 5px;
         color: #009ee5;
@@ -192,18 +194,28 @@ body {
         left: 0;
         bottom: 0;
         width: 100%;
-        height: 45px;
-        padding: 14px 0 14px 22px;
+        height: 38px;
+        padding: 10px 0 14px 22px;
         font-size: 14px;
         font-weight: bold; }
       .box .info .summary div {
         margin-right: 10px; }
     .box .info .summary *, .box .info .prices * {
       display: inline-block; }
+    .box .info .contact a {
+      position: absolute;
+      right: 20px;
+      bottom: 9px;
+      text-decoration: none;
+      color: #1ea7dd;
+      text-decoration: none;
+      color: #1ea7dd;
+      text-transform: uppercase;
+      font-weight: bold; }
     .box .info .contact {
       position: absolute;
       right: 20px;
-      bottom: 9px; }
+      bottom: -3px; }
       @media (max-width: 480px) {
         .box .info .contact {
           position: static;
@@ -243,6 +255,11 @@ body {
       max-width: 414px; } }
   .box .slider {
     background: #eaeaea; }
+    .box .slider img {
+      min-width: 370px; }
+      @media (max-width: 480px) {
+        .box .slider img {
+          min-width: 414px; } }
     .box .slider .heart {
       position: absolute;
       top: 20px;
@@ -276,3 +293,40 @@ body {
         left: 14px;
         font-size: 14px;
         font-weight: bold; } }
+
+.modal-content {
+  border: 0.5px solid #e1e1e1;
+  border-radius: unset; }
+  .modal-content .close {
+    margin: 10px 10px 0px 0px; }
+  .modal-content .modal-header {
+    border-bottom: none; }
+    .modal-content .modal-header p {
+      color: #1ea7dd;
+      font-weight: bold;
+      font-size: 14px; }
+  .modal-content .modal-body {
+    padding: 0 1rem; }
+    .modal-content .modal-body p {
+      margin-bottom: 2px;
+      font-size: 14px;
+      font-weight: bold;
+      color: #999; }
+    .modal-content .modal-body .form-control {
+      border: none;
+      border-bottom: 1px solid #999;
+      font-size: 14px;
+      border-radius: 0; }
+      .modal-content .modal-body .form-control.error {
+        border-bottom: 2px solid #e60000; }
+    .modal-content .modal-body #result {
+      color: red; }
+  .modal-content .sendButton {
+    border: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+    background: unset;
+    float: right;
+    color: #1ea7dd;
+    text-transform: uppercase;
+    font-weight: bold; }

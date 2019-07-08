@@ -17,16 +17,24 @@ price.addEventListener("click", editPrice)
 calcularTotal(price.innerHTML, meters)
 
 function calcularTotal(price, meters) {
+
     if(localStorage.getItem('priceValue')){
         total.innerHTML = parseInt(Number(localStorage.getItem('priceValue')) / Number(meters.innerHTML))
         let newPrice = document.querySelector('.prices .price span')
         let newPriceMobile = document.querySelector('.prices-mobile .price span')
-        newPrice.innerHTML = localStorage.getItem('priceValue')
+        
+        let priceNum = Number(localStorage.getItem('priceValue'))
+
+        let finalPrice = new Intl.NumberFormat("es-AR").format(priceNum)
+
+        newPrice.innerHTML = finalPrice
+
         newPriceMobile.innerHTML = localStorage.getItem('priceValue')
 
     }else{
-
-        total.innerHTML = parseInt(Number(price) / Number(meters.innerHTML))
+        let finalPrice = parseInt(Number(price) / Number(meters.innerHTML))
+       
+        total.innerHTML =  new Intl.NumberFormat("es-AR").format(finalPrice)
     }
 }
 
@@ -51,7 +59,9 @@ function editPrice() {
         calcularTotal(txt_num1.value, meters)
         priceContainer.removeChild(txt_num1)
         priceContainer.removeChild(btn_confirmar)
-        price.innerHTML = txt_num1.value
+
+        let finalPrice = parseInt(txt_num1.value)
+        price.innerHTML = new Intl.NumberFormat("es-AR").format(finalPrice)
     }
 }
 
