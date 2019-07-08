@@ -1,7 +1,7 @@
 
 # Navent Challange
 Bajar el codigo. 
-### This is a third-tier heading
+### Correr los siguientes comandos 
 `npm install`
 `npm run scss` 
 
